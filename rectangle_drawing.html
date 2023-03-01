@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bài 3</title>
+</head>
+<body>
+
+<p><b>Bài 3 :</b>Vẽ hình chữ nhật</p>
+    <h2 id="result"></h2>
+
+
+<script>
+    res= document.getElementById("result");
+    function display() {
+        let triangle ='';
+        let height = +prompt("Nhập giá trị chiều ngang hình chữ nhật: ");
+        let width = +prompt("Nhập giá trị chiều dọc hình chữ nhật: ");
+        if(isNaN(height) || isNaN(width))
+        {
+            alert("Giá trị nhập không đúng");
+        }
+        for(let j =1;j<=height;j++)
+        {
+            triangle += "*";
+        }
+        triangle += "<br/>";
+
+        for(let i=1;i<=(width-2);i++)
+        {
+            triangle += "*";
+            for(let j =1;j<=height-1;j++)
+            {
+                if(j==height -1) {triangle += "*";break;}
+                triangle += "&nbsp&nbsp;";
+            }
+            triangle += "<br/>";
+        }
+        if(width >=2)
+        {
+            for(let j =1;j<=height;j++)
+            {
+                triangle += "*";
+            }
+        }
+
+        res.innerHTML = triangle;
+    }
+
+
+    display();
+</script>
+</body>
+</html>
